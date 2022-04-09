@@ -1,16 +1,33 @@
-<ul *ngFor='let quote of quotes'>
-<div *ngIf="quote.upvote == highest && quote.upvote >0; then highlight else unhighlight"></div>
-<ng-template #highlight>
-  <li appHighlightQuote> {{quote.quote}}
-    <br>
-    <span style="margin-right: 30px;">UPVOTE{{quote.upvote}}</span> <span>DOWNVOTE{{quote.downvote}}</span>
-  </li>
-</ng-template>
-<ng-template #unhighlight>
-  <li>{{quote.quote}}
-    <br>
-    <span style="margin-right: 30px;">UPVOTE{{quote.upvote}}</span> <span>DOWNVOTE{{quote.downvote}}</span>
-  </li>
-</ng-template>
 
-</ul>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <app-quote-form></app-quote-form>
+        </div>
+        <div class="col-md-8">
+            <ul *ngFor='let quote of quotes'>
+                <div *ngIf="quote.upvote == highest && quote.upvote >0; then highlight else unhighlight"></div>
+                <ng-template #highlight>
+                  <li appHighlightQuote> {{quote.quote}}
+                    <br>
+                    <span style="margin-right: 30px;">UPVOTE{{quote.upvote}}</span> <span>DOWNVOTE{{quote.downvote}}</span>
+                    <br>
+                    <span>{{quote.author}}</span>
+                    <br>
+                    <span>{{quote.dateAdded}}</span>
+                  </li>
+                </ng-template>
+                <ng-template #unhighlight>
+                  <li>{{quote.quote}}
+                    <br>
+                    <span style="margin-right: 30px;">UPVOTE{{quote.upvote}}</span> <span>DOWNVOTE{{quote.downvote}}</span>
+                  </li>
+                </ng-template>
+                </ul>
+        </div>
+    </div>
+    
+</div>
+
+
+

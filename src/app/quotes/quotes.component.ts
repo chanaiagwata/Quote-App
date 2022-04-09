@@ -8,9 +8,9 @@ import { Quote } from '../quote';
 // use quote class to get values to be displayed in quotes.component html
 export class QuotesComponent implements OnInit {
   quotes:Quote[] =[
-    new Quote(1, 'First quote', 0, 0),
-    new Quote(2, 'Second quote', 0, 0),
-    new Quote(3, 'Third quote', 0, 0),
+    new Quote(1, 'First quote', 0, 0, '', 'author', new Date()),
+    new Quote(2, 'Second quote', 0, 0, '', 'author', new Date()),
+    new Quote(3, 'Third quote', 0, 0, '', 'author', new Date()),
   ]
   // condition to return quote with highest upvotes
   arr:number[] = this.quotes.map(

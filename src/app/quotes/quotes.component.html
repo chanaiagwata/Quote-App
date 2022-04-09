@@ -1,1 +1,6 @@
-<p>Quote Component</p>
+<ul *ngFor = 'let quote of quotes'>
+    <li>{{quote.quote}}
+        <br>
+        <span style="margin-right: 30px;">UPVOTE{{quote.upvote}}</span> <span>DOWNVOTE{{quote.downvote}}</span>
+    </li>
+</ul>

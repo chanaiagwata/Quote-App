@@ -1,3 +1,9 @@
 <p>{{quote.description}}</p>
-<button (click)= 'quoteComplete(true)'>Delete Quote</button>
+<div>
+    <li style="list-style: none;">Added by~{{quote.contributor}}</li>
+</div>
+<div>
+    <button (click)= 'quoteComplete(isComplete)'>Delete Quote</button>
+</div>
+
 

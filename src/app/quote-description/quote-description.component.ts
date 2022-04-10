@@ -10,7 +10,7 @@ export class QuoteDescriptionComponent implements OnInit {
   quote!: Quote;
   @Output() isComplete = new EventEmitter<boolean>();
 
-  quoteComplete(complete:boolean){
+  quoteComplete(complete:any){
     this.isComplete.emit(complete);
   }
   constructor() { }

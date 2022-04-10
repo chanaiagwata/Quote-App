@@ -11,7 +11,7 @@
             <div appHighlightQuote>
               <li class="text-center" style="list-style: none;">{{quote.quote}}</li>
               <li class="text-center" style="list-style: none;">Quote added on~{{quote.dateAdded|date}}</li>
-              <button class="btn btn-primary btn-sm" ng-click= "incrementUp(member)"><span class="glyphicon glyphicon-arrow-up"></span>Upvote</button> | <button class="btn btn-danger btn-sm" ng-click= "incrementDown(member)"><span class="glyphicon glyphicon-arrow-down"></span> Downvote</button>
+              <!-- <button class="btn btn-primary btn-sm" ng-click= "incrementUp(member)"><span class="glyphicon glyphicon-arrow-up"></span>Upvote</button> | <button class="btn btn-danger btn-sm" ng-click= "incrementDown(member)"><span class="glyphicon glyphicon-arrow-down"></span> Downvote</button> -->
               <li style="list-style: none;">~{{quote.author}}</li>
             </div>
           </ng-template>
@@ -24,9 +24,13 @@
               <li style="list-style: none;">Quote added on~{{quote.dateAdded|date}}</li>
             </div>
             <!-- <button (click)='toggledescription(i)'>Toggle Details</button> -->
-                   
           </ng-template>
-
+ 
+          <p class="mt-4">
+            <span class="mr-5"><ng-content></ng-content> {{quote.upvote}}  &#x25B2;</span><ng-content></ng-content> {{quote.downvote}}   &#x25BC; <span></span>
+          </p>
+      
+         
           <button (click)='toggleDescription(i)'>Show more details</button>
 
           <app-quote-description *ngIf='quote.description' [quote]='quote' (isComplete) = 'completeQuote($event,i)'> </app-quote-description>

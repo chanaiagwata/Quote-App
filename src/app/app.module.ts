@@ -10,6 +10,7 @@ import { HighlightQuoteDirective } from './highlight-quote.directive';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { QuoteDescriptionComponent } from './quote-description/quote-description.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { QuoteDescriptionComponent } from './quote-description/quote-description
     QuotesComponent,
     HighlightQuoteDirective,
     QuoteFormComponent,
-    QuoteDescriptionComponent
+    QuoteDescriptionComponent,
+
   ],
   imports: [
     BrowserModule,

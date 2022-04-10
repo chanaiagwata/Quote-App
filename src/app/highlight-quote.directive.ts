@@ -1,3 +1,4 @@
+// to be used once the upvote/downvote feature is introduced
 import { Directive, ElementRef } from '@angular/core';
 
 @Directive({

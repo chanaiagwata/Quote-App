@@ -12,7 +12,7 @@ export class Quote {
   completeDate: Date | undefined;
   static completeDate: string | number | Date;
   valid: any;
-  description:boolean;
+  description:any;
     constructor(id:number, quote:string, upvote:number, downvote:number, contributor:string, author:string, dateAdded:Date){
         this.id = id;
         this.quote = quote;

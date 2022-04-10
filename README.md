@@ -3,13 +3,13 @@
 ## By Chanai Agwata
 ### (MS School Project)
 
-* [Overall Description](https://github.com/chanaiagwata/Pizzanetic#overall-project-description)
+* [Overall Description](https://github.com/chanaiagwata/Quote-App/tree/master#overall-project-description)
 
-* [Setup Instructions](https://github.com/chanaiagwata/Pizzanetic#setup-instructions)
+* [Setup Instructions](https://github.com/chanaiagwata/Quote-App/tree/master#setup-instructions)
 
-* [License](https://github.com/chanaiagwata/Pizzanetic#license)
+* [License](https://github.com/chanaiagwata/Quote-App/tree/master#license)
 
-* [Author's Info](https://github.com/chanaiagwata/Pizzanetic#authors-info)
+* [Author's Info](https://github.com/chanaiagwata/Quote-App/tree/master#authors-info)
 
 ## Overall Project Description
 <p>This is a an application that allows users to create quotes and have those quotes voted on whether they are terrible or are inspirational.</p>

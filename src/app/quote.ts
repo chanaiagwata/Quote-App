@@ -1,4 +1,7 @@
 export class Quote {
+  reset() {
+    throw new Error('Method not implemented.');
+  }
     id: number;
     quote:string;
     upvote:number;
@@ -8,6 +11,8 @@ export class Quote {
     contributor:string;
   completeDate: Date | undefined;
   static completeDate: string | number | Date;
+  valid: any;
+  description:boolean;
     constructor(id:number, quote:string, upvote:number, downvote:number, contributor:string, author:string, dateAdded:Date){
         this.id = id;
         this.quote = quote;
@@ -16,5 +21,6 @@ export class Quote {
         this.author = author;
         this.dateAdded = dateAdded;
         this.contributor =contributor;
+        this.description = false;
     }
 }

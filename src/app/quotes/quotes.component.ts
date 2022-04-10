@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Quote } from '../quote';
+
 @Component({
   selector: 'app-quotes',
   templateUrl: './quotes.component.html',
@@ -25,9 +26,18 @@ export class QuotesComponent implements OnInit {
     quote.completeDate = new Date(quote.completeDate)
     this.quotes.push(quote)
   }
+  completeQuote(isComplete: any, index: number){
+    if (isComplete){
+      this.quotes.splice(index,1);
+    }
+  }
+  toggleDescription(index:any){
+    this.quotes[index].description = !this.quotes[index].description;
+  }
   constructor() { }
 
   ngOnInit(): void {
-  }
 
+   }
 }
+ 

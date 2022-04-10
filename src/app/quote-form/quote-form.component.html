@@ -2,8 +2,8 @@
 <form (ngSubmit)="submitQuote()" #goalForm='ngForm'>
 
   <div class="form-group">
-    <label for="quoteItself">Add Quote</label>
-    <textarea class="form-control" name="newQuotearea" id="newQuotearea" rows="3" required [(ngModel)]="newQuote.quote"
+    <label for="quoteItself">Quote</label>
+    <textarea class="form-control" name="newQuotearea" id="newQuotearea" rows="10" required [(ngModel)]="newQuote.quote"
       #newQuotearea='ngModel'></textarea>
   </div>
   <!-- validate quote iput -->

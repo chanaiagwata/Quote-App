@@ -9,18 +9,18 @@
         <div>
           <ng-template #highlight>
             <div appHighlightQuote>
-              <li class="text-center">{{quote.quote}}</li>
-              <li class="text-center">Quote added on~{{quote.dateAdded|date}}</li>
-              <li>~{{quote.author}}</li>
+              <li class="text-center" style="list-style: none;">{{quote.quote}}</li>
+              <li class="text-center" style="list-style: none;">Quote added on~{{quote.dateAdded|date}}</li>
+              <li style="list-style: none;">~{{quote.author}}</li>
             </div>
           </ng-template>
         </div>
         <div>
           <ng-template #unhighlight>
             <div appHighlightQuote>
-              <li class="text-center">{{quote.quote}}</li>
-              <li class="text-center">~{{quote.author}}</li>
-              <li>Quote added on~{{quote.dateAdded|date}}</li>
+              <li class="text-center" style="list-style: none;">{{quote.quote}}</li>
+              <li class="text-center" style="list-style: none;">~{{quote.author}}</li>
+              <li style="list-style: none;">Quote added on~{{quote.dateAdded|date}}</li>
             </div>
           </ng-template>
           <!-- <button (click)='toggleDescription(i)'>Toggle Details</button>-->

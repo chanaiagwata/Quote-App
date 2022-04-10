@@ -3,57 +3,68 @@
     <div class="col-md-4">
       <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
     </div>
-    <div class="col-md-8">
-      <ul *ngFor='let quote of quotes; let i = index'>
-        <div *ngIf="quote.upvote == highest && quote.upvote >0; then highlight else unhighlight">
+    <div class="col-md-8 mt-5">
+      <div class="container-fluid quoteDisplay">
+        <ul *ngFor='let quote of quotes; let i = index'>
+          <div *ngIf="quote.upvote == highest && quote.upvote >0; then highlight else unhighlight">
 
-          
-        </div>
-        <div>
-          <ng-template #highlight>
-            <div appHighlightQuote>
-              <li class="text-center" style="list-style: none;">{{quote.quote}}</li>
-              <li class="text-center" style="list-style: none;">~{{quote.author}}</li>
-              <li class="text-center mt-3" style="list-style: none;">Quote added on~{{quote.dateAdded|date}}</li>
-              <p class="mt-4">
-                <span class="mr-5"><ng-content></ng-content> UPVOTE &#x25B2;{{quote.upvote}} </span><ng-content></ng-content>DOWNVOTE  &#x25BC;{{quote.downvote}}   <span></span>
-              </p>
-              <div class="text-center">
-                <button (click)='toggleDescription(i)'>Show more details</button>
+          </div>
+          <hr>
+          <div>
+            <ng-template #highlight>
+              <div appHighlightQuote>
+                <li class="text-center" style="list-style: none;">{{quote.quote}}</li>
+                <li class="text-center" style="list-style: none;">~{{quote.author}}</li>
+                <li class="text-center mt-3" style="list-style: none;">Quote added on~{{quote.dateAdded|date}}</li>
+                <p class="mt-4">
+                  <span class="mr-5">
+                    <ng-content></ng-content><a href="#">UPVOTE&#x25B2;</a> {{quote.upvote}} 
+                  </span>
+                  <ng-content></ng-content><a href="#">DOWNVOTE &#x25BC;</a>{{quote.downvote}}  <span></span>
+                </p>
+                <div class="text-center">
+                  <button class="btn btn-primary" (click)='toggleDescription(i)'>Show more details</button>
+                </div>
+                <app-quote-description *ngIf='quote.description' [quote]='quote' (isComplete)='completeQuote($event,i)'>
+                </app-quote-description>
               </div>
-              <app-quote-description *ngIf='quote.description' [quote]='quote' (isComplete) = 'completeQuote($event,i)'> </app-quote-description>
-            </div>
-          </ng-template>
-        </div>
-        <hr>
-        <div>
-          <ng-template #unhighlight>
-            <div>
-              <li class="text-center" style="list-style: none;">{{quote.quote}}</li>
-              <li class="text-center" style="list-style: none;">~{{quote.author}}</li>
-              <li class="text-center mt-3" style="list-style: none;">Quote added on~{{quote.dateAdded|date}}</li>
-              <p class="mt-4">
-                <span class="mr-5"><ng-content></ng-content>UPVOTE&#x25B2;{{quote.upvote}}  </span><ng-content></ng-content>DOWNVOTE &#x25BC;{{quote.downvote}} <span></span>
-              </p>
-              <div class="text-center">
-                <button (click)='toggleDescription(i)'>Show more details</button>
+            </ng-template>
+          </div>
+          <hr>
+      
+          <div>
+            <ng-template #unhighlight>
+              <div>
+                <li class="text-center" style="list-style: none;">{{quote.quote}}</li>
+                <li class="text-center" style="list-style: none;">~{{quote.author}}</li>
+                <li class="text-center mt-3" style="list-style: none;">Quote added on~{{quote.dateAdded|date}}</li>
+                <p class="mt-4">
+                  <span class="mr-5">
+                    <ng-content></ng-content><a href="#">UPVOTE &#x25B2;</a>{{quote.upvote}} 
+                  </span>
+                  <ng-content></ng-content><a href="#">DOWNVOTE &#x25BC;</a>{{quote.downvote}} <span></span>
+                </p>
+                <div class="text-center">
+                  <button class="btn btn-primary" (click)='toggleDescription(i)'>Show more details</button>
+                </div>
+
+                <app-quote-description *ngIf='quote.description' [quote]='quote' (isComplete)='completeQuote($event,i)'>
+                </app-quote-description>
               </div>
-            
+            </ng-template>
 
-          <app-quote-description *ngIf='quote.description' [quote]='quote' (isComplete) = 'completeQuote($event,i)'> </app-quote-description>
-            </div>
-          </ng-template>
-  
-         
-          
-         
+          </div>
+        </ul>
+        <div>
+
         </div>
-      </ul>
-      <div>
-
       </div>
     </div>
+
   </div>
+
+
+
 
 </div>
 

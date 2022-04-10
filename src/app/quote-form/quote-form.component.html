@@ -1,5 +1,5 @@
 <p>Add New Quote</p>
-<form #goalForm='ngForm' (ngSubmit)="newQuote">
+<form (ngSubmit)="submitQuote()" #goalForm='ngForm'>
 
   <div class="form-group">
     <label for="quoteItself">Add Quote</label>
@@ -24,11 +24,15 @@
 
   <div class="form-group ">
     <label for="inputAuthor">Author</label>
-    <input type="text" class="form-control" name="inputAuthor" id="inputAuthor" required [(ngModel)]="newQuote.author" #inputAuthor = 'ngModel'>
- <!-- validate author input-->
- <div [hidden]="inputAuthor.valid ||inputAuthor.pristine" class="alert alert-danger">
-    <p>Author is required</p>></div> 
+    <input type="text" class="form-control" name="inputAuthor" id="inputAuthor" required [(ngModel)]="newQuote.author"
+      #inputAuthor='ngModel'>
+    <!-- validate author input-->
+    <div [hidden]="inputAuthor.valid ||inputAuthor.pristine" class="alert alert-danger">
+      <p>Author is required</p>
+    </div>
+  </div>
+<div class="form-group">
+    <button type="submit" class="btn btn-primary" value="output quote" id="bnt-submit">Submit</button>
 </div>
- 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  
 </form>

@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-          <app-quote-form></app-quote-form>
+          <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
         </div>
         <div class="col-md-8">
             <ul *ngFor='let quote of quotes'>
@@ -24,6 +24,9 @@
                   </li>
                 </ng-template>
                 </ul>
+                <div>
+                   
+                </div>
         </div>
     </div>
     

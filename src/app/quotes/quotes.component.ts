@@ -8,18 +8,23 @@ import { Quote } from '../quote';
 // use quote class to get values to be displayed in quotes.component html
 export class QuotesComponent implements OnInit {
   quotes:Quote[] =[
-    new Quote(1, 'First quote', 0, 0, '', 'author', new Date()),
-    new Quote(2, 'Second quote', 0, 0, '', 'author', new Date()),
-    new Quote(3, 'Third quote', 0, 0, '', 'author', new Date()),
+    new Quote(1, '', 0, 0, '', '', new Date()),
+    new Quote(2, '', 0, 0, '', '', new Date()),
+    new Quote(3, '', 0, 0, '', '', new Date()),
   ]
   // condition to return quote with highest upvotes
   arr:number[] = this.quotes.map(
   function (quote){
     return quote.upvote
-  }
-  )
+  });
   highest = Math.max(...this.arr)
-
+  
+  addNewQuote(quote:any){
+    let quoteLength = this.quotes.length;
+    quote.id = quoteLength+1;
+    quote.completeDate = new Date(quote.completeDate)
+    this.quotes.push(quote)
+  }
   constructor() { }
 
   ngOnInit(): void {

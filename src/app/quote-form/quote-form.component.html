@@ -1,38 +1,42 @@
-<p>Add New Quote</p>
-<form (ngSubmit)="submitQuote()" #goalForm='ngForm'>
+<div class="container-fluid">
+  <div class="main mt-5">
 
-  <div class="form-group">
-    <label for="quoteItself">Quote</label>
-    <textarea class="form-control" name="newQuotearea" id="newQuotearea" rows="10" required [(ngModel)]="newQuote.quote"
-      #newQuotearea='ngModel'></textarea>
-  </div>
-  <!-- validate quote iput -->
-  <div [hidden]="newQuotearea.valid || newQuotearea.pristine" class="alert alert-danger">
-    <p>Quote is required</p>
+    <form (ngSubmit)="submitQuote()" #goalForm='ngForm'>
+      <div class="form-group">
+        <label for="quoteItself">Add New Quote</label>
+        <textarea class="form-control" name="newQuotearea" id="newQuotearea" rows="10" required
+          [(ngModel)]="newQuote.quote" #newQuotearea='ngModel'></textarea>
+      </div>
+      <!-- validate quote iput -->
+      <div [hidden]="newQuotearea.valid || newQuotearea.pristine" class="alert alert-danger">
+        <p>Quote is required</p>
+      </div>
+
+      <div class="form-group ">
+        <label for="contributor" class="mt-3">Quote Added By:</label>
+        <input type="text" class="form-control" name="submissionMadeby" id="submissionMadeby" required
+          [(ngModel)]="newQuote.contributor" #submissionMadeby='ngModel'>
+        <!-- validate contributor input-->
+        <div [hidden]="submissionMadeby.valid || submissionMadeby.pristine" class="alert alert-danger">
+          <p>Name is required</p>
+        </div>
+
+      </div>
+
+      <div class="form-group ">
+        <label for="inputAuthor" class="mt-3">Author</label>
+        <input type="text" class="form-control" name="inputAuthor" id="inputAuthor" required
+          [(ngModel)]="newQuote.author" #inputAuthor='ngModel'>
+        <!-- validate author input-->
+        <div [hidden]="inputAuthor.valid ||inputAuthor.pristine" class="alert alert-danger">
+          <p>Author is required</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-warning mt-3" value="output quote" id="bnt-submit">Submit</button>
+      </div>
+    </form>
   </div>
 
-  <div class="form-group ">
-    <label for="contributor">Quote Added By:</label>
-    <input type="text" class="form-control" name="submissionMadeby" id="submissionMadeby" required
-      [(ngModel)]="newQuote.contributor" #submissionMadeby='ngModel'>
-    <!-- validate contributor input-->
-    <div [hidden]="submissionMadeby.valid || submissionMadeby.pristine" class="alert alert-danger">
-      <p>Name is required</p>
-    </div>
 
-  </div>
-
-  <div class="form-group ">
-    <label for="inputAuthor">Author</label>
-    <input type="text" class="form-control" name="inputAuthor" id="inputAuthor" required [(ngModel)]="newQuote.author"
-      #inputAuthor='ngModel'>
-    <!-- validate author input-->
-    <div [hidden]="inputAuthor.valid ||inputAuthor.pristine" class="alert alert-danger">
-      <p>Author is required</p>
-    </div>
-  </div>
-<div class="form-group">
-    <button type="submit" class="btn btn-primary" value="output quote" id="bnt-submit">Submit</button>
 </div>
-  
-</form>

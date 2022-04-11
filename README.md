@@ -73,7 +73,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Click this link for additional information https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop
 
 ### Live Site
-Access it here 
+Access it here  https://chanaiagwata.github.io/Quote-App/
 
 
 ## License

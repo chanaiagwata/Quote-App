@@ -1,4 +1,7 @@
-
-.voting{
-    height:100px;
+.card{
+background: #82B1A1;
+}
+.card:hover{
+    transform: scale(1.05);
+ box-shadow: 0 10px 20px black, 0 4px 8px black;
 }

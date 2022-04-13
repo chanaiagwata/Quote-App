@@ -24,20 +24,30 @@ export class QuotesComponent implements OnInit {
     return quote.upvote
   });
   highest = Math.max(...this.arr)
-  
+  // add new quote
   addNewQuote(quote:any){
     let quoteLength = this.quotes.length;
     quote.id = quoteLength+1;
     quote.completeDate = new Date(quote.completeDate)
     this.quotes.push(quote)
   }
-  completeQuote(isComplete: any, index: number){
+  // vote quote
+  // upvoting(i:number){
+  //   this.quotes[i].upvote++;  
+  // }
+  // downvoting(index:number){
+  //   this.quotes[index].downvote++
+  // }
+
+ // delete quote
+  completeQuote(isComplete: any, i: number){
     if (isComplete){
-      this.quotes.splice(index,1);
+      this.quotes.splice(i,1);
     }
   }
-  toggleDescription(index:any){
-    this.quotes[index].description = !this.quotes[index].description;
+  // show description
+  toggleDescription(i:any){
+    this.quotes[i].description = !this.quotes[i].description;
   }
   constructor() { }
 

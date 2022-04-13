@@ -11,6 +11,7 @@ import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { QuoteDescriptionComponent } from './quote-description/quote-description.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { QuoteDescriptionComponent } from './quote-description/quote-description
     HighlightQuoteDirective,
     QuoteFormComponent,
     QuoteDescriptionComponent,
+   
 
   ],
   imports: [

@@ -13,6 +13,9 @@ export class QuoteDescriptionComponent implements OnInit {
   quoteComplete(complete:any){
     this.isComplete.emit(complete);
   }
+  // upvoting(index.number){
+    
+  // }
   constructor() { }
 
   ngOnInit() {

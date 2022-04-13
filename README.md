@@ -27,7 +27,7 @@
 * Click the submit button to list the quote on the application.
 * You can upvote or downvote other listed quotes depending on whether they inspire you or not.
 * The once the show more details button is clicked, it gives the user a chance to see the name of the contributor and can also qelete it. 
-![screenshot](https://raw.githubusercontent.com/chanaiagwata/Quote-App/master/src/assets/2022-04-11_03-13.png)
+![screenshot]()
 ### Languages and Frameworks
 * HTML
 * CSS

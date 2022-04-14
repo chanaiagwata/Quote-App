@@ -4,17 +4,49 @@
       <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
     </div>
     <div class="row mt-5">
-      <div *ngFor='let quote of quotes; let i = index'>
+      <div *ngFor="let quote of quotes; let i =index">
+        <div HighlightQuoteDirective *ngIf="highest()===quote.upvote && quote.upvote>0"></div>{{quote.quote}}
+        <div *ngIf="highest()!==quote.upvote || quote.upvote===0; then highlight else unhighlight"></div>
+        <ng-template #highlight> 
+        {{quote.quote}}
+        <p class="text-center" style="list-style: none;">~{{quote.author}}</p>
+        <p class="text-center mt-3" style="list-style: none;">Added, ~{{quote.dateAdded |timeCount}}ago</p>
+        <button (click)="upvoteClick(i)">UPVOTE</button>{{quote.upvote}}
+        <button (click)="downvoteClick(i)">DOWNVOTE</button>{{quote.downvote}}
+        <button class="btn btn-success" (click)='toggleDescription(i)'>More Details</button>
+        <app-quote-description *ngIf='quote.description' [quote]='quote' (isComplete)='completeQuote($event,i)'>
+        </app-quote-description>
+     
+       </ng-template>
+       <ng-template #unhighlight> 
+        {{quote.quote}}
+        <p class="text-center" style="list-style: none;">~{{quote.author}}</p>
+        <p class="text-center mt-3" style="list-style: none;">Added~{{quote.dateAdded|timeCount}} ago</p>
+        <button (click)="upvoteClick(i)">UPVOTE</button>{{quote.upvote}}
+        <button (click)="downvoteClick(i)">DOWNVOTE</button>{{quote.downvote}}
+        <button class="btn btn-success" (click)='toggleDescription(i)'>More Details</button> 
+        <app-quote-description *ngIf='quote.description' [quote]='quote' (isComplete)='completeQuote($event,i)'>
+        </app-quote-description>
+     
+       </ng-template>
+
+
+
+
+
+
+        <!-- <div *ngFor='let quote of quotes; let i = index'> -->
         <!-- <p *ngIf="quote.upvote == highest && quote.upvote >0; then highlight else unhighlight"></p> -->
-        <p *ngIf="quote.upvote &&quote.upvote == highest; then highlight else unhighlight"></p>
+        <!-- <p *ngIf="quote.upvote &&quote.upvote == highest; then highlight else unhighlight"></p> -->
+
 
 
 
         <div class="col-md-3 mt-3 ml-3">
-          <ng-template #highlight>
-            <div class="card  ml-3" style="max-width: 350px;">
-              <div appHighlightQuote>
-                <div class="card-body">
+          <!-- <ng-template #highlight> -->
+          <div class="card  ml-3" style="max-width: 350px;">
+            <!-- <div appHighlightQuote> -->
+            <!-- <div class="card-body">
                   <li class="text-center" style="list-style: none;"><span>&#8220;</span> {{quote.quote}}
                     <span>&#8221;</span></li>
                   <li class="text-center" style="list-style: none;">~{{quote.author}}</li>
@@ -27,13 +59,13 @@
                   <app-quote-description *ngIf='quote.description' [quote]='quote'
                     (isComplete)='completeQuote($event,i)'>
                   </app-quote-description>
-                </div>
-              </div>
-            </div>
-          </ng-template>
+                </div> -->
+            <!-- </div> -->
+          </div>
+          <!-- </ng-template> -->
         </div>
 
-        <div class="col-md-3">
+        <!-- <div class="col-md-3">
           <ng-template #unhighlight>
             <div class="card  ml-3" style="max-width: 350px;">
 
@@ -51,12 +83,11 @@
               </div>
             </div>
           </ng-template>
-        </div>
+        </div> -->
       </div>
     </div>
 
   </div>
 </div>
-
 
 

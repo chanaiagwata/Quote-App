@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Quote } from '../quote';
 
+
 @Component({
   selector: 'app-quotes',
   templateUrl: './quotes.component.html',
@@ -11,19 +12,17 @@ export class QuotesComponent implements OnInit {
   quotes:Quote[] =[
     new Quote(1, 'The future belongs to those who believe in the beauty of their dreams.', 0, 0, 'Titus Kamwira', 'Eleanor Roosevelt', new Date),
     new Quote(2, 'Tell me and I forget. Teach me and I remember. Involve me and I learn.', 0, 0, 'Elvice Oduor', 'Benjamin Franklin', new Date()),
-    new Quote(3, 'It is during our darkest moments that we must focus to see the light.', 0, 0, 'Anabelle Majiwa', '-Aristotle', new Date()),
-    new Quote(4, 'Hardware: The parts of a computer system that can be kicked.', 0, 0, 'Clinton Maina', 'Jeff Pesis', new Date()),
-    new Quote(5, 'The trouble with programmers is that you can never tell what a programmer is doing until it’s too late..', 0, 0, 'John Doe', 'Seymour Cray:', new Date()),
-    new Quote(6, 'If it keeps up, man will atrophy all his limbs but the push-button finger.', 0, 0, 'Rechael Wandithia', 'Frank Lloyd Wright', new Date()),
-
     
   ]
+  lastNum!: number;
+  startNum!: number;
+  addition!: number;
   // condition to highlight quote with highest upvotes
-  arr:number[] = this.quotes.map(
-  function (quote){
-    return quote.upvote
-  });
-  highest = Math.max(...this.arr)
+  // arr:number[] = this.quotes.map(
+  // function (quote){
+  //   return quote.upvote
+  // });
+  // highest = Math.max(...this.arr)
   // add new quote
   addNewQuote(quote:any){
     let quoteLength = this.quotes.length;
@@ -32,12 +31,24 @@ export class QuotesComponent implements OnInit {
     this.quotes.push(quote)
   }
   // vote quote
-  // upvoting(i:number){
-  //   this.quotes[i].upvote++;  
-  // }
-  // downvoting(index:number){
-  //   this.quotes[index].downvote++
-  // }
+  upvoteClick(i:any){
+    this.quotes[i].upvote++;
+  }
+  downvoteClick(i:any){
+    this.quotes[i].downvote++
+  }
+  // Get highest upvoted quote
+  highest(){
+    this.startNum = 0;
+    this.lastNum = 0;
+   for (this.addition = 0; this.addition<this.quotes.length; this.addition++){
+     this.lastNum = this.quotes[this.addition].upvote;
+     if(this.lastNum>this.startNum){
+       this.startNum =this.lastNum;
+     }
+   }
+   return this.startNum;
+  }
 
  // delete quote
   completeQuote(isComplete: any, i: number){

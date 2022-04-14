@@ -9,7 +9,7 @@
     }
     
 .main{
-    background:#1E2E23 ;
+    background:#BC3D44;
     padding:20px;
     color:#f1f1f1;
     border-radius: 10px;
@@ -19,5 +19,9 @@
 .btn{
     padding-left:10px;
     padding-right: 10px;
-    font-weight: bold;
+    background:#CDCDCD;
+}
+.btn:hover{
+    color: #FFFFFF;
+    background-color: #8DB2BB;
 }

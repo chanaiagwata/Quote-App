@@ -4,7 +4,7 @@
     <form (ngSubmit)="submitQuote()" #goalForm='ngForm'>
       <div class="form-group">
         <label for="quoteItself">Add New Quote</label>
-        <textarea class="form-control" name="newQuotearea" id="newQuotearea" rows="10" required
+        <textarea class="form-control" name="newQuotearea" id="newQuotearea" rows="3" required
           [(ngModel)]="newQuote.quote" #newQuotearea='ngModel'></textarea>
       </div>
       <!-- validate quote iput -->
@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-success mt-3" value="output quote" id="bnt-submit">Submit</button>
+        <a><button type="submit" class="btn mt-3" value="output quote" id="bnt-submit">Submit</button></a>
       </div>
     </form>
   </div>

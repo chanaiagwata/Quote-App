@@ -5,7 +5,11 @@
     </div>
     <div class="row mt-5">
       <div *ngFor='let quote of quotes; let i = index'>
-        <p *ngIf="quote.upvote == highest && quote.upvote >0; then highlight else unhighlight"></p>
+        <!-- <p *ngIf="quote.upvote == highest && quote.upvote >0; then highlight else unhighlight"></p> -->
+        <p *ngIf="quote.upvote &&quote.upvote == highest; then highlight else unhighlight"></p>
+
+
+
         <div class="col-md-3 mt-3 ml-3">
           <ng-template #highlight>
             <div class="card  ml-3" style="max-width: 350px;">
@@ -15,16 +19,10 @@
                     <span>&#8221;</span></li>
                   <li class="text-center" style="list-style: none;">~{{quote.author}}</li>
                   <li class="text-center mt-3" style="list-style: none;">Quote added on~{{quote.dateAdded|date}}</li>
-                  <p class="mt-4">
-                    <span class="mr-5">
-                      <ng-content></ng-content><a href="#">UPVOTE&#x25B2;</a> {{quote.upvote}} 
-                    </span>
-                    <ng-content></ng-content><a href="#">DOWNVOTE &#x25BC;</a>{{quote.downvote}}  <span></span>
-                  </p>
-                 
+ 
 
                   <div class="text-center">
-                    <button class="btn btn-success" (click)='toggleDescription(i)'>Show more</button>
+                    <button class="btn btn-success" (click)='toggleDescription(i)'>More Details</button>
                   </div>
                   <app-quote-description *ngIf='quote.description' [quote]='quote'
                     (isComplete)='completeQuote($event,i)'>
@@ -44,15 +42,9 @@
                   <span>&#8220;</span>{{quote.quote}}<span>&#8221;</span></li>
                 <li class="text-center" style="list-style: none;">~{{quote.author}}</li>
                 <li class="text-center mt-3" style="list-style: none;">Quote added on~{{quote.dateAdded|date}}</li>
-                <p class="mt-4">
-                  <span class="mr-5">
-                    <ng-content></ng-content><a href="#">UPVOTE &#x25B2;</a>{{quote.upvote}} 
-                  </span>
-                  <ng-content></ng-content><a href="#">DOWNVOTE &#x25BC;</a>{{quote.downvote}} <span></span>
-                </p>
-                <!-- <app-voting></app-voting> -->
+
                 <div class="text-center">
-                  <button class="btn btn-success" (click)='toggleDescription(i)'>Show more</button>
+                  <button class="btn btn-success" (click)='toggleDescription(i)'>More Details</button>
                 </div>
                 <app-quote-description *ngIf='quote.description' [quote]='quote' (isComplete)='completeQuote($event,i)'>
                 </app-quote-description>

@@ -2,6 +2,9 @@
 <div>
     <li style="list-style: none;">Added by~{{quote.contributor}}</li>
 </div>
+<p>Inspirational?<button class="btn1" (click)="upvoteClick()">UPVOTE</button> <span>{{quote.upvote}}</span> </p>
+<p><span>Uninspirational?</span><button class="btn2" (click)="downvoteClick()" >DOWNVOTE:</button>{{quote.downvote}}</p>
+
 <div>
     <button class="btn btn-success mt-2 ml-3" (click)= 'quoteComplete(isComplete)'>Delete Quote</button>
 </div>

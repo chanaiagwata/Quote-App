@@ -13,9 +13,12 @@ export class QuoteDescriptionComponent implements OnInit {
   quoteComplete(complete:any){
     this.isComplete.emit(complete);
   }
-  // upvoting(index.number){
-    
-  // }
+  upvoteClick(){
+    this.quote.upvote ++;
+  }
+  downvoteClick(){
+    this.quote.downvote ++;
+  }
   constructor() { }
 
   ngOnInit() {

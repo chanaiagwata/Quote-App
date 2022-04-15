@@ -40,9 +40,9 @@
 * This project is open for improvement suggestions and interested parties can fork and pull request at any time.
 
 ## Setup Instructions
-* copy the url on arrow down
-* Clone on your computer
-* Go live or start your server
+* copy the url on arrow down,
+* Clone on your computer,
+* Go live or start your server.
 #### Note
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
 

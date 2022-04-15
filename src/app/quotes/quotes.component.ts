@@ -10,7 +10,7 @@ import { Quote } from '../quote';
 // use quote class to get values to be displayed in quotes.component html
 export class QuotesComponent implements OnInit {
   quotes:Quote[] =[
-    new Quote(1, 'The future belongs to those who believe in the beauty of their dreams.', 0, 0, 'Titus Kamwira', 'Eleanor Roosevelt', new Date),
+    new Quote(1, 'The future belongs to those who believe in the beauty of their dreams.', 0, 0, 'Titus Kamwira', 'Eleanor Roosevelt', new Date()),
     new Quote(2, 'Tell me and I forget. Teach me and I remember. Involve me and I learn.', 0, 0, 'Elvice Oduor', 'Benjamin Franklin', new Date()),
     
   ]

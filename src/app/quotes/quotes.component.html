@@ -5,8 +5,8 @@
     </div>
     <div class="quoteCard">
       <div class="quoteBody" *ngFor="let quote of quotes; let i =index">
-        <div HighlightQuoteDirective *ngIf="highest()===quote.upvote && quote.upvote>0"></div>{{quote.quote}}
-        <div *ngIf="highest()!==quote.upvote || quote.upvote===0; then highlight else unhighlight"></div>
+        <div HighlightQuoteDirective *ngIf="highest()==quote.upvote || quote.upvote; then highlight else unhighlight"></div>
+        <!-- <div *ngIf="highest()!==quote.upvote || quote.upvote===0; "></div> -->
         <div>
           <ng-template #highlight>
             {{quote.quote}}
